@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-3 ml-5 mt-3" *ngFor="let land of lands">
+      <div class="card" style="width: 20rem;">
+
+          <div class="card-body">
+            <h5 class="card-title">ID             :{{land.id}}</h5>
+            <h5 class="card-title">OWNER NAME     :{{land.holder}}</h5>
+            <h5 class="card-title">CITY           :{{land.city}}</h5>
+            <h5 class="card-title">STREET         :{{land.street}}</h5>
+            <h5 class="card-title">LOCALITY       :{{land.locality}}</h5>
+            <h5 class="card-title">SQUARE FEET    :{{land.sq}}</h5>
+            <h5 class="card-title">LENGTH         :{{land.len}}</h5>
+            <h5 class="card-title">WIDTH          :{{land.wid}}</h5>
+            <h5 class="card-title">Description    :{{land.description}}</h5>
+            <a class="btn btn-unique"[routerLink]="['/bid']" routerLinkActive="router-link-active">Bid Now</a>   
+          </div>
+
+      </div>
+  </div>
+
+</div>
+        
+<router-outlet> </router-outlet>            

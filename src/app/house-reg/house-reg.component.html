@@ -1,0 +1,66 @@
+<div>
+        <h1>House Registration </h1>
+        <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)=" onSubmit()" novalidate>
+            {{ userForm.form.valid }}
+            <div class="form-group">
+                <label>Id</label>
+                <input type="number" required #id="ngModel"
+                [class.is-invalid]="id.invalid && id.touched" class="form-control" name="id" [(ngModel)]="userModel.id">
+            </div>
+            <div class="form-group">
+                    <label>House Owner Name</label>
+                    <input type="text" required #holder="ngModel"
+                    [class.is-invalid]="holder.invalid && holder.touched" class="form-control" name="holder" [(ngModel)]="userModel.holder">
+                </div>
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" required #city="ngModel"
+                [class.is-invalid]="city.invalid && city.touched" class="form-control" name="city" [(ngModel)]="userModel.city">
+                <small [class.d-none]="city.valid || city.untouched">Name is Required</small>
+            </div>
+            <div class="form-group">
+                <label>Street Name</label>
+                <input type="text" required #street="ngModel"
+                [class.is-invalid]="street.invalid && street.touched" class="form-control" name="street" [(ngModel)]="userModel.street">
+                <small [class.d-none]="street.valid || street.untouched">Name is Required</small>
+            </div>
+            <div class="form-group">
+                <label>Locality</label>
+                <input type="text" required #locality="ngModel"
+                [class.is-invalid]="locality.invalid && locality.touched" class="form-control" name="locality" [(ngModel)]="userModel.locality">
+                <small [class.d-none]="locality.valid || locality.untouched">Name is Required</small>
+            </div>
+            <div class="form-group">
+                <label>Square Feet</label>
+                <input type="number" required #sq="ngModel"
+                [class.is-invalid]="sq.invalid && sq.touched" class="form-control" name="sq" [(ngModel)]="userModel.sq">
+            </div>
+            <div class="form-group">
+                <label>Length</label>
+                <input type="number" required #len="ngModel"
+                [class.is-invalid]="len.invalid && len.touched" class="form-control" name="len" [(ngModel)]="userModel.len">
+            </div>
+            <div class="form-group">
+                <label>Width</label>
+                <input type="number" required #wid="ngModel"
+                [class.is-invalid]="wid.invalid && wid.touched" class="form-control" name="wid" [(ngModel)]="userModel.wid">
+            </div>
+            <div class="form-group">
+                <label>Room</label>
+                <input type="number" required #room="ngModel"
+                [class.is-invalid]="room.invalid && room.touched" class="form-control" name="room" [(ngModel)]="userModel.room">
+            </div>
+            <div class="form-group">
+                <label>Hall</label>
+                <input type="number" required #hall="ngModel"
+                [class.is-invalid]="hall.invalid && hall.touched" class="form-control" name="hall" [(ngModel)]="userModel.hall">
+            </div>
+              
+            <div class="form-group">
+                <label>House Description</label>
+                <input type="text" required #description="ngModel"
+                [class.is-invalid]="description.invalid && description.touched" class="form-control" name="description" [(ngModel)]="userModel.description">
+            </div>
+            <button [disabled]="userForm.form.invalid || topicHasError" class="btn btn-primary" type="submit">Register</button>
+        </form>
+    </div>

@@ -1,0 +1,43 @@
+<div>
+    <h1>Gold Registration </h1>
+    <form #userForm="ngForm" *ngIf="!submitted" (ngSubmit)=" onSubmit()" novalidate>
+        {{ userForm.form.valid }}
+        <div class="form-group">
+            <label>Id</label>
+            <input type="number" required #id="ngModel"
+            [class.is-invalid]="id.invalid && id.touched" class="form-control" name="id" [(ngModel)]="userModel.id">
+        </div>
+        <div class="form-group">
+            <label>Gold Name</label>
+            <input type="text" required #gname="ngModel"
+            [class.is-invalid]="gname.invalid && gname.touched" class="form-control" name="gname" [(ngModel)]="userModel.gname">
+            <small [class.d-none]="gname.valid || gname.untouched">Name is Required</small>
+        </div>
+        <div class="form-group">
+            <label>Pown</label>
+            <input type="number" required #pown="ngModel"
+            [class.is-invalid]="pown.invalid && pown.touched" class="form-control" name="pown" [(ngModel)]="userModel.pown">
+        </div>
+        <div class="form-group">
+            <label>Grams</label>
+            <input type="number" required #grams="ngModel"
+            [class.is-invalid]="grams.invalid && grams.touched" class="form-control" name="grams" [(ngModel)]="userModel.grams">
+        </div>
+        <div class="form-group">
+            <label>Carat</label>
+            <input type="number" required #carat="ngModel"
+            [class.is-invalid]="carat.invalid && carat.touched" class="form-control" name="carat" [(ngModel)]="userModel.carat">
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input type="text" required #city="ngModel"
+            [class.is-invalid]="city.invalid && city.touched" class="form-control" name="city" [(ngModel)]="userModel.city">
+        </div>
+        <div class="form-group">
+            <label>Gold Description</label>
+            <input type="text" required #description="ngModel"
+            [class.is-invalid]="description.invalid && description.touched" class="form-control" name="description" [(ngModel)]="userModel.description">
+        </div>
+        <button [disabled]="userForm.form.invalid || topicHasError" class="btn btn-primary" type="submit">Register</button>
+    </form>
+</div>
